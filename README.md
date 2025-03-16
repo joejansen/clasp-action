@@ -54,7 +54,7 @@ Deploy ID that will be updated with this push.
 ### Case to push
 
 ```yaml
-- uses: joejansen/clasp-action@v1
+- uses: joejansen/clasp-action@v1.2
   with:
     accessToken: ${{ secrets.ACCESS_TOKEN }}
     idToken: ${{ secrets.ID_TOKEN }}
@@ -68,7 +68,7 @@ Deploy ID that will be updated with this push.
 ### Case to deploy
 
 ```yaml
-- uses: joejansen/clasp-action@v1
+- uses: joejansen/clasp-action@v1.2
   with:
     accessToken: ${{ secrets.ACCESS_TOKEN }}
     idToken: ${{ secrets.ID_TOKEN }}
@@ -82,7 +82,7 @@ Deploy ID that will be updated with this push.
 ### Case to deploy with description
 
 ```yaml
-- uses: joejansen/clasp-action@v1
+- uses: joejansen/clasp-action@v1.2
   with:
     accessToken: ${{ secrets.ACCESS_TOKEN }}
     idToken: ${{ secrets.ID_TOKEN }}
@@ -97,7 +97,7 @@ Deploy ID that will be updated with this push.
 ### Case to specify the directory where scripts are stored
 
 ```yaml
-- uses: joejansen/clasp-action@v1
+- uses: joejansen/clasp-action@v1.2
   with:
     accessToken: ${{ secrets.ACCESS_TOKEN }}
     idToken: ${{ secrets.ID_TOKEN }}
@@ -112,7 +112,7 @@ Deploy ID that will be updated with this push.
 ### Case to update a specific deploy
 
 ```yaml
-- uses: joejansen/clasp-action@v1
+- uses: joejansen/clasp-action@v1.2
   with:
     accessToken: ${{ secrets.ACCESS_TOKEN }}
     idToken: ${{ secrets.ID_TOKEN }}
