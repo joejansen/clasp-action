@@ -1,6 +1,6 @@
 # Clasp Action
 
-This action uses [clasp](https://github.com/google/clasp) to push or deploy to [Google Apps Script](https://developers.google.com/apps-script/). This action is running `clasp push -f` regardless of whether you select `push` or `deploy` as the command. This will force the remote manifest to be overwritten.
+This action uses [clasp](https://github.com/google/clasp) to push or deploy to [Google Apps Script](https://developers.google.com/apps-script/). This action is running `clasp push -f` regardless of whether you select `push` or `deploy` as the command. This will force the remote manifest to be overwritten. This action is using [clasp v 2.5.0](https://www.npmjs.com/package/@google/clasp/v/2.5.0).
 
 ## Inputs
 
@@ -54,7 +54,7 @@ Deploy ID that will be updated with this push.
 ### Case to push
 
 ```yaml
-- uses: daikikatsuragawa/clasp-action@v1.1.0
+- uses: joejansen/clasp-action@v1
   with:
     accessToken: ${{ secrets.ACCESS_TOKEN }}
     idToken: ${{ secrets.ID_TOKEN }}
@@ -62,13 +62,13 @@ Deploy ID that will be updated with this push.
     clientId: ${{ secrets.CLIENT_ID }}
     clientSecret: ${{ secrets.CLIENT_SECRET }}
     scriptId: ${{ secrets.SCRIPT_ID }}
-    command: 'push'
+    command: "push"
 ```
 
 ### Case to deploy
 
 ```yaml
-- uses: daikikatsuragawa/clasp-action@v1.1.0
+- uses: joejansen/clasp-action@v1
   with:
     accessToken: ${{ secrets.ACCESS_TOKEN }}
     idToken: ${{ secrets.ID_TOKEN }}
@@ -76,13 +76,13 @@ Deploy ID that will be updated with this push.
     clientId: ${{ secrets.CLIENT_ID }}
     clientSecret: ${{ secrets.CLIENT_SECRET }}
     scriptId: ${{ secrets.SCRIPT_ID }}
-    command: 'deploy'
+    command: "deploy"
 ```
 
 ### Case to deploy with description
 
 ```yaml
-- uses: daikikatsuragawa/clasp-action@v1.1.0
+- uses: joejansen/clasp-action@v1
   with:
     accessToken: ${{ secrets.ACCESS_TOKEN }}
     idToken: ${{ secrets.ID_TOKEN }}
@@ -90,29 +90,14 @@ Deploy ID that will be updated with this push.
     clientId: ${{ secrets.CLIENT_ID }}
     clientSecret: ${{ secrets.CLIENT_SECRET }}
     scriptId: ${{ secrets.SCRIPT_ID }}
-    command: 'deploy'
-    description: 'Sample description'
+    command: "deploy"
+    description: "Sample description"
 ```
 
 ### Case to specify the directory where scripts are stored
 
 ```yaml
-- uses: daikikatsuragawa/clasp-action@v1.1.0
-  with:
-    accessToken: ${{ secrets.ACCESS_TOKEN }}
-    idToken: ${{ secrets.ID_TOKEN }}
-    refreshToken: ${{ secrets.REFRESH_TOKEN }}
-    clientId: ${{ secrets.CLIENT_ID }}     
-    clientSecret: ${{ secrets.CLIENT_SECRET }}
-    scriptId: ${{ secrets.SCRIPT_ID }}
-    rootDir: 'src'
-    command: 'push'
-```
-
-### Case to update a specific deploy
-
-```yaml
-- uses: daikikatsuragawa/clasp-action@v1.1.0
+- uses: joejansen/clasp-action@v1
   with:
     accessToken: ${{ secrets.ACCESS_TOKEN }}
     idToken: ${{ secrets.ID_TOKEN }}
@@ -120,7 +105,22 @@ Deploy ID that will be updated with this push.
     clientId: ${{ secrets.CLIENT_ID }}
     clientSecret: ${{ secrets.CLIENT_SECRET }}
     scriptId: ${{ secrets.SCRIPT_ID }}
-    command: 'deploy'
+    rootDir: "src"
+    command: "push"
+```
+
+### Case to update a specific deploy
+
+```yaml
+- uses: joejansen/clasp-action@v1
+  with:
+    accessToken: ${{ secrets.ACCESS_TOKEN }}
+    idToken: ${{ secrets.ID_TOKEN }}
+    refreshToken: ${{ secrets.REFRESH_TOKEN }}
+    clientId: ${{ secrets.CLIENT_ID }}
+    clientSecret: ${{ secrets.CLIENT_SECRET }}
+    scriptId: ${{ secrets.SCRIPT_ID }}
+    command: "deploy"
     deployId: ${{ secrets.DEPLOY_ID }}
 ```
 
